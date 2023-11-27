@@ -1,0 +1,8 @@
+file_format: "1"
+id: horizon-mini
+name: Horizon-mini
+type: shield
+url: https://github.com/Pe8er/horizon-mini
+requires: [pro_micro]
+features:
+  - keys

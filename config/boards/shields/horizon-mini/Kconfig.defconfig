@@ -1,9 +1,9 @@
 # Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_HORIZON
+if SHIELD_HORIZON-MINI
 
 config ZMK_KEYBOARD_NAME
-    default "Horizon"
+    default "Horizon-mini"
 
 endif
