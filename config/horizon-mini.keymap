@@ -84,10 +84,10 @@
 
         left {
             bindings = <
-&kp N1           &kp N2       &kp N3     &kp N4      &kp N5                             &kp N6     &kp N7         &kp N8        &kp N9                &kp N0
-&kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT                        &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&gresc           &trans       &trans     &trans      &trans       &kp MINUS  &kp EQUAL  &trans     &trans         &kp SLASH     &kp LEFT_BRACKET      &kp RIGHT_BRACKET
-&trans           &trans       &trans     &trans      &trans       &trans     &trans     &trans     &trans         &kp PAGE_UP   &trans                &kp PAGE_DOWN
+&kp N1           &kp N2       &kp N3     &kp N4      &kp N5                                    &kp N6     &kp N7         &kp N8          &kp N9                &kp N0
+&kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT                               &kp CARET  &kp AMPERSAND  &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&gresc           &trans       &trans     &trans      &trans       &kp MINUS  &kp EQUAL         &trans     &trans         &kp SLASH       &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+&trans           &trans       &trans     &trans      &trans       &trans     &kp C_PLAY_PAUSE  &trans     &trans         &kp C_PREVIOUS  &trans                &kp C_NEXT
             >;
 
             label = "Numbers";
@@ -95,17 +95,33 @@
 
         right {
             bindings = <
-&bt BT_SEL 0          &bt BT_SEL 1          &bt BT_SEL 2                            &bt BT_SEL 3  &bt BT_SEL 4                  &tog 1  &trans  &trans   &trans   &bt BT_CLR
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &trans        &trans                        &trans  &trans  &trans   &trans   &trans
-&kp F1                &kp F2                &kp F3                                  &kp F4        &kp F5        &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans                &trans                &trans                                  &trans        &trans        &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&kp F1                &kp F2                &kp F3                                  &kp F4  &kp F5                  &kp F6  &kp F7  &kp F8  &kp F9   &kp F10
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &trans  &trans                  &trans  &trans  &trans  &kp F11  &kp F12
+&trans                &trans                &trans                                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&trans                &trans                &trans                                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
             >;
 
             label = "System";
+        };
+
+        bluetooth {
+            bindings = <
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &trans  &trans  &trans  &trans  &bt BT_CLR
+&trans        &trans        &trans        &trans        &trans                        &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "BT";
         };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
+        Bluetooth {
+            if-layers = <2 3>;
+            then-layer = <4>;
+        };
     };
 };
