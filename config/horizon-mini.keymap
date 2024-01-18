@@ -42,11 +42,6 @@
             key-positions = <30 31>;
         };
 
-        combo_alfred {
-            bindings = <&kp LA(TAB)>;
-            key-positions = <37 38>;
-        };
-
         combo_slash {
             bindings = <&kp BACKSLASH>;
             key-positions = <8 9>;
