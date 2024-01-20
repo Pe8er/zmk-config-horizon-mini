@@ -26,6 +26,11 @@
             bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
+        
+        combo_tab {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <20 21>;
+        };
 
         combo_slash {
             bindings = <&kp BACKSLASH>;
